@@ -1,0 +1,16 @@
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
+
+type Query {
+  vehicles: [Vehicle!]!
+  vehicle(id: ID!): Vehicle
+}
+
+type Vehicle @key(fields: "id") {
+  id: ID!
+  make: String!
+  model: String!
+  year: Int!
+  vin: String!
+  mileage: Int!
+  images: [String!]
+}

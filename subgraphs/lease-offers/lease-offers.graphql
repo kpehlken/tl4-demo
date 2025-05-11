@@ -1,0 +1,38 @@
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
+
+type Query {
+  offers: [LeaseOffer!]!
+}
+
+type LeaseOffer {
+  id: ID!
+  monthlyPayment: Float!
+  term: Int! # In months
+  mileageAllowance: Int!
+  downPayment: Float!
+  vehicle: Vehicle!
+  applicants: [Customer!]!
+}
+
+type Vehicle @key(fields: "id") {
+  id: ID!
+  totalOffers: Int
+  offersForVehicle: [LeaseOffer!]!
+}
+
+type Mutation {
+  submitOffer(offerInput: LeaseOfferInput): SubmitOfferResponse
+}
+
+input LeaseOfferInput {
+  monthlyPayment: Float!
+  term: Int!
+  mileageAllowance: Int!
+  downPayment: Float!
+  vehicleId: String!
+}
+
+type SubmitOfferResponse {
+  success: Boolean!
+  vehicleOffer: LeaseOffer
+}

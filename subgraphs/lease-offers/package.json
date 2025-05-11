@@ -1,0 +1,25 @@
+{
+  "name": "reviews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=14.0.0 <=20"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.9.3",
+    "@apollo/subgraph": "^2.5.5",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
