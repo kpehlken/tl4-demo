@@ -1,15 +1,15 @@
 const resolvers = {
   Query: {
-    locations: (_, __, { dataSources }) => {
-      return dataSources.locationsAPI.getAllLocations();
+    vehicles: (_, __, { dataSources }) => {
+      return dataSources.vehicleAPI.getAllVehicles();
     },
-    location: (_, { id }, { dataSources }) => {
-      return dataSources.locationsAPI.getLocation(id);
+    vehicle: (_, { id }, { dataSources }) => {
+      return dataSources.vehicleAPI.getVehicle(id);
     },
   },
-  Location: {
+  Vehicle: {
     __resolveReference: ({ id }, { dataSources }) => {
-      return dataSources.locationsAPI.getLocation(id);
+      return dataSources.vehicleAPI.getVehicle(id);
     },
   },
 };

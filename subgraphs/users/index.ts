@@ -1,28 +1,77 @@
-const { ApolloServer } = require('@apollo/server');
-const { startStandaloneServer } = require('@apollo/server/standalone');
-const { buildSubgraphSchema } = require('@apollo/subgraph');
+import {ApolloServer} from "@apollo/server";
+import { startStandaloneServer} from "@apollo/server/standalone";
+import {buildSubgraphSchema} from "@apollo/subgraph";
+import { readFileSync } from "fs";
+import gql from "graphql-tag"
+import resolvers from "./resolvers";
+import UsersAPI from "./datasources/UsersApi";
+const typeDefs = gql(readFileSync('./users.graphql', { encoding: 'utf-8' }));
+import { verify } from "jsonwebtoken";
 
-const { readFileSync } = require('fs');
-const gql = require('graphql-tag');
+const JWT_SECRET = "secret";
 
-const typeDefs = gql(readFileSync('./reviews.graphql', { encoding: 'utf-8' }));
-const resolvers = require('./resolvers');
-const ReviewsAPI = require('./datasources/UsersApi');
+function decodeToken(token: string) {
+  if (!token) {
+    return null;
+  }
+
+  if (token.startsWith('Bearer ')) {
+    token = token.slice(7);
+  }
+
+  const decoded = verify(token, JWT_SECRET, {
+    algorithms: ['HS256'],
+  });
+
+  return decoded;
+}
+
+function isTokenValid(token: string): boolean {
+  if (!token) {
+    return false;
+  }
+
+  if (token.startsWith('Bearer ')) {
+    token = token.slice(7);
+  }
+
+  try {
+    const decoded = verify(token, JWT_SECRET, {
+      algorithms: ['HS256'],
+    });
+    return true;
+  } catch(err) {
+    return false;
+  }
+}
 
 async function startApolloServer() {
   const server = new ApolloServer({
     schema: buildSubgraphSchema({ typeDefs, resolvers }),
   });
 
-  const port = 4002;
-  const subgraphName = 'reviews';
+  const port = 4003;
+  const subgraphName = 'users';
 
   try {
     const { url } = await startStandaloneServer(server, {
-      context: async () => {
+      context: async ({ req }) => {
+        const token = req.headers.authorization;
+
+        let user;
+        let status;
+        if(!isTokenValid(token)) {
+          user = null;
+          status = "UNAUTHENTICATED";
+        } else {
+          user = decodeToken(token);
+          status = "AUTHENTICATED";
+        }
+
         return {
+          auth: { user, status: status },
           dataSources: {
-            reviewsAPI: new ReviewsAPI(),
+            usersAPI: new UsersAPI(),
           },
         };
       },

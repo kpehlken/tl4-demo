@@ -1,13 +1,14 @@
-import {locations} from "./locations_data.json";
+import {vehicles} from "./vehicle_data.json";
 
-class LocationsAPI {
-  getAllLocations() {
-    return locations;
+
+class VehicleApi {
+  getAllVehicles() {
+    return vehicles;
   }
 
-  getLocation(id) {
-    return locations.find(l => l.id === id);
+  getVehicle(id) {
+    return vehicles.find(l => l.id === id);
   }
 }
 
-export default LocationsAPI;
+export default VehicleApi;

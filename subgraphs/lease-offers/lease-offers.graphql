@@ -2,16 +2,22 @@ extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@
 
 type Query {
   offers: [LeaseOffer!]!
+  offer(id: ID!): LeaseOffer
 }
 
-type LeaseOffer {
+type Mutation {
+  createOffer(offerInput: LeaseOfferInput): CreateOfferResponse # Only Dealer
+  applyToOffer(applicationInput: ApplicationInput): ApplicationResponse # Only Customer
+}
+
+type LeaseOffer @key(fields: "id") {
   id: ID!
   monthlyPayment: Float!
   term: Int! # In months
   mileageAllowance: Int!
   downPayment: Float!
   vehicle: Vehicle!
-  applicants: [Customer!]!
+  applicants: [User!]!
 }
 
 type Vehicle @key(fields: "id") {
@@ -20,8 +26,8 @@ type Vehicle @key(fields: "id") {
   offersForVehicle: [LeaseOffer!]!
 }
 
-type Mutation {
-  submitOffer(offerInput: LeaseOfferInput): SubmitOfferResponse
+type User @key(fields: "id") {
+  id: ID!
 }
 
 input LeaseOfferInput {
@@ -32,7 +38,18 @@ input LeaseOfferInput {
   vehicleId: String!
 }
 
-type SubmitOfferResponse {
+type CreateOfferResponse {
   success: Boolean!
   vehicleOffer: LeaseOffer
+}
+
+input ApplicationInput {
+  message: String!
+  monthlyIncome: Float!
+  submittedAt: String!
+}
+
+
+type ApplicationResponse {
+  success: Boolean!
 }

@@ -4,9 +4,9 @@ import {buildSubgraphSchema} from "@apollo/subgraph";
 import {readFileSync} from "fs";
 import gql from "graphql-tag";
 
-const typeDefs = gql(readFileSync('./reviews.graphql', { encoding: 'utf-8' }));
-const resolvers = require('./resolvers');
-const ReviewsAPI = require('./datasources/ReviewsApi');
+const typeDefs = gql(readFileSync('./lease-offers.graphql', { encoding: 'utf-8' }));
+import resolvers from "./resolvers";
+import LeaseOfferApi from "./datasources/LeaseOfferApi";
 
 async function startApolloServer() {
   const server = new ApolloServer({
@@ -14,14 +14,14 @@ async function startApolloServer() {
   });
 
   const port = 4002;
-  const subgraphName = 'reviews';
+  const subgraphName = 'lease offers';
 
   try {
     const { url } = await startStandaloneServer(server, {
       context: async () => {
         return {
           dataSources: {
-            reviewsAPI: new ReviewsAPI(),
+            leaseOfferAPI: new LeaseOfferApi(),
           },
         };
       },

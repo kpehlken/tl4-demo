@@ -1,64 +1,94 @@
 {
-    "reviews": [
+    "offers": [
         {
-            "id": "rev-1",
-            "locationId": "loc-1",
-            "rating": 5,
-            "comment": "I would also like to say thank you to all your staff! I would gladly pay over 600 dollars for planet. Planet was worth a fortune to my company. After using planet my business skyrocketed!"
+            "id": "offer_001",
+            "monthlyPayment": 289.99,
+            "term": 36,
+            "mileageAllowance": 12000,
+            "downPayment": 2500.00,
+            "vehicleId": "VEH_2024_COROLLA_001",
+            "applicantIds": ["USER_001"]
         },
         {
-            "id": "rev-2",
-            "locationId": "loc-1",
-            "rating": 5,
-            "comment": "It's really wonderful. We have no regrets! Keep up the excellent work."
+            "id": "offer_002",
+            "monthlyPayment": 449.00,
+            "term": 48,
+            "mileageAllowance": 15000,
+            "downPayment": 3500.00,
+            "vehicleId": "VEH_2024_RAV4_001",
+            "applicantIds": ["USER_001", "USER_002"]
         },
         {
-            "id": "rev-3",
-            "locationId": "loc-1",
-            "rating": 5,
-            "comment": "This is simply unbelievable! It's the perfect solution for our business. Really good. I don't always clop, but when I do, it's because of planet"
+            "id": "offer_003",
+            "monthlyPayment": 799.99,
+            "term": 36,
+            "mileageAllowance": 10000,
+            "downPayment": 5000.00,
+            "vehicleId": "VEH_2024_BMW_5_SERIES_001",
+            "applicantIds": ["USER_002"]
         },
         {
-            "id": "rev-4",
-            "locationId": "loc-1",
-            "rating": 2,
-            "comment": "Planet is exactly what our business has been lacking. It's incredible. If you want real marketing that works and effective implementation - planet's got you covered."
+            "id": "offer_004",
+            "monthlyPayment": 549.00,
+            "term": 24,
+            "mileageAllowance": 10000,
+            "downPayment": 4000.00,
+            "vehicleId": "VEH_2024_TESLA_MODEL_3_001",
+            "applicantIds": ["USER_003"]
         },
         {
-            "id": "rev-5",
-            "locationId": "loc-2",
-            "rating": 4,
-            "comment": "Thanks planet! I was amazed at the quality of planet. Planet did exactly what you said it does."
+            "id": "offer_005",
+            "monthlyPayment": 599.00,
+            "term": 60,
+            "mileageAllowance": 20000,
+            "downPayment": 3000.00,
+            "vehicleId": "VEH_2024_F150_001",
+            "applicantIds": ["USER_004"]
         },
         {
-            "id": "rev-6",
-            "locationId": "loc-2",
-            "rating": 3,
-            "comment": "I would also like to say thank you to all your staff. I would gladly pay over 600 dollars for planet. Planet was worth a fortune to my company. After using planet my business skyrocketed!"
+            "id": "offer_006",
+            "monthlyPayment": 219.99,
+            "term": 36,
+            "mileageAllowance": 12000,
+            "downPayment": 1500.00,
+            "vehicleId": "VEH_2024_CIVIC_001",
+            "applicantIds": ["USER_004", "USER_005"]
         },
         {
-            "id": "rev-7",
-            "locationId": "loc-2",
-            "rating": 2,
-            "comment": "It's really wonderful. We have no regrets! Keep up the excellent work."
+            "id": "offer_007",
+            "monthlyPayment": 899.00,
+            "term": 39,
+            "mileageAllowance": 7500,
+            "downPayment": 6000.00,
+            "vehicleId": "VEH_2024_AUDI_Q5_001",
+            "applicantIds": ["USER_005"]
         },
         {
-            "id": "rev-8",
-            "locationId": "loc-2",
-            "rating": 5,
-            "comment": "This is simply unbelievable! It's the perfect solution for our business. Really good. I don't always clop, but when I do, it's because of planet"
+            "id": "offer_008",
+            "monthlyPayment": 1299.00,
+            "term": 24,
+            "mileageAllowance": 5000,
+            "downPayment": 8500.00,
+            "vehicleId": "VEH_2024_PORSCHE_911_001",
+            "applicantIds": ["USER_006"]
         },
         {
-            "id": "rev-9",
-            "locationId": "loc-3",
-            "rating": 5,
-            "comment": "Planet is exactly what our business has been lacking. It's incredible. If you want real marketing that works and effective implementation - planet's got you covered."
+            "id": "offer_009",
+            "monthlyPayment": 399.00,
+            "term": 48,
+            "mileageAllowance": 15000,
+            "downPayment": 2000.00,
+            "vehicleId": "VEH_2024_SIENNA_001",
+            "applicantIds": ["USER_007"]
         },
         {
-            "id": "rev-10",
-            "locationId": "loc-4",
-            "rating": 5,
-            "comment": "Thanks planet! I was amazed at the quality of planet. Planet did exactly what you said it does."
+            "id": "offer_010",
+            "monthlyPayment": 349.00,
+            "term": 36,
+            "mileageAllowance": 12000,
+            "downPayment": 0.00,
+            "vehicleId": "VEH_2024_ACCORD_001",
+            "applicantIds": ["USER_008"]
         }
     ]
 }

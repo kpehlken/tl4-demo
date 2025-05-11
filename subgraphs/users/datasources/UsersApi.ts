@@ -1,32 +1,24 @@
-let {reviews} = require('./users_data.json');
+import { users } from "./users_data.json";
 
-class UsersApi {
-  getReview(id) {
-    return reviews.find(r => r.id === id);
+class UsersAPI {
+
+  getAllUsers() {
+    return users;
   }
 
-  getReviewsForLocation(id) {
-    return reviews.filter(r => r.locationId === id);
+  getUser(id) {
+    return users.find(user => user.id === id);
   }
 
-  getLatestReviews() {
-    return reviews.slice(Math.max(reviews.length - 3, 0));
+  getUserByVehicleId(vehicleId) {
+    return users.find(user => user.vehicleIds.includes(vehicleId));
   }
 
-  getOverallRatingForLocation(id) {
-    const allRatings = reviews
-      .filter(r => r.locationId === id)
-      .map(r => r.rating);
-    const sum = allRatings.reduce((a, b) => a + b, 0);
-    const average = sum / allRatings.length || 0;
-    return average;
+  getDealerNotesForVehicle(vehicleId) {
+    const dealer =  users.find(user => user.vehicleIds.includes(vehicleId));
+    return dealer.vehicleNotes[vehicleId];
   }
 
-  submitReviewForLocation(review) {
-    const newReview = {id: `rev-${reviews.length + 1}`, ...review};
-    reviews = [...reviews, newReview];
-    return newReview;
-  }
 }
 
-module.exports = UsersApi;
+export default UsersAPI;

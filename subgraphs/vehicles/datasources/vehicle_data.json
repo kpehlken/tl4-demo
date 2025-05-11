@@ -1,34 +1,145 @@
 {
-    "locations": [
+    "vehicles": [
         {
-            "id": "loc-1",
-            "name": "The Living Ocean of New Lemuria",
-            "description": "Surviving is usually extremely difficult, especially when nutrients are scarce and you have to choose between growing or reproducing. One species on this planet has developed a nifty method to prepare for this. Once full matured, this species will split into 2 versions of itself and attached to each other, so it's essentially reproducing. Once those 2 are fully grown, they newly grown version will either detach itself if enough nutrients are available or it becomes a storage unit for the original, if nutrients are scarce. If nutrients continue to be scarce, the original will use slowly consume the nutrients in the new version in the hope that new nutrients become available again and it can repeat the cycle.",
-            "photo": "https://res.cloudinary.com/apollographql/image/upload/v1644381344/odyssey/federation-course1/FlyBy%20illustrations/Landscape_4_lkmvlw.png"
+            "id": "VEH_2024_COROLLA_001",
+            "make": "Toyota",
+            "model": "Corolla",
+            "year": 2024,
+            "vin": "2T1BU4EE8PC123456",
+            "mileage": 1250,
+            "images": [
+                "https://example.com/images/vehicles/corolla_001_front.jpg",
+                "https://example.com/images/vehicles/corolla_001_side.jpg",
+                "https://example.com/images/vehicles/corolla_001_interior.jpg"
+            ]
         },
         {
-            "id": "loc-2",
-            "name": "Vinci",
-            "description": "Many of the creatures on this planet have evolved into gliders, so to speak. Most of the fish and aquatic mammals, despite coming in various shapes and sizes, tend to glide through the water without effort, similar to how manta's glide on Earth. However, the surface species are more astonishing. Similar to the flying squirrels or the vultures of Earth, many of the species on this planet have developed ways to effortlessly move from one place to another by using the winds. But there is one species which shows signs of sentience. These species, a type of bird, love to play and have become masters of flight. Similar to how dolphins play, explore and learn, these species use their intellect and courage to play and sometimes challenge each other to death defying tricks.",
-            "photo": "https://res.cloudinary.com/apollographql/image/upload/v1644381349/odyssey/federation-course1/FlyBy%20illustrations/Landscape_15_tiqel5.png"
+            "id": "VEH_2024_RAV4_001",
+            "make": "Toyota",
+            "model": "RAV4",
+            "year": 2024,
+            "vin": "JTMZ2RFV8PD789012",
+            "mileage": 890,
+            "images": [
+                "https://example.com/images/vehicles/rav4_001_front.jpg",
+                "https://example.com/images/vehicles/rav4_001_rear.jpg",
+                "https://example.com/images/vehicles/rav4_001_interior.jpg",
+                "https://example.com/images/vehicles/rav4_001_dashboard.jpg"
+            ]
         },
         {
-            "id": "loc-3",
-            "name": "Asteroid B-612",
-            "description": "Nutrients are always needed but not always around, so organisms have to find ways to get them. Common ways are using different roots to find them in deep or shallow grounds or even stealing them from others, but on this planet many species have found a different balance. Unlike most plants on Earth who tend to only produce oxygen and nutrients, usually in the form of sugars, for itself, the organisms on this planet also produce other forms of nutrients for itself, usually for different purposes. These processes often lead to many byproducts which it doesn't need and are thus discarded. These discarded products are exactly what other species need to live and in turn produce byproducts it discards for the other organisms, leading to a delicate balance.",
-            "photo": "https://res.cloudinary.com/apollographql/image/upload/v1644381343/odyssey/federation-course1/FlyBy%20illustrations/Landscape_6_vt6y3v.png"
+            "id": "VEH_2024_BMW_5_SERIES_001",
+            "make": "BMW",
+            "model": "5 Series",
+            "year": 2024,
+            "vin": "WBA5R7C57PB345678",
+            "mileage": 2100,
+            "images": [
+                "https://example.com/images/vehicles/bmw_5series_001_front.jpg",
+                "https://example.com/images/vehicles/bmw_5series_001_side.jpg",
+                "https://example.com/images/vehicles/bmw_5series_001_interior.jpg",
+                "https://example.com/images/vehicles/bmw_5series_001_wheel.jpg",
+                "https://example.com/images/vehicles/bmw_5series_001_back.jpg"
+            ]
         },
         {
-            "id": "loc-4",
-            "name": "Krypton",
-            "description": "Similar to the surface, the underwater world has little more to offer than basic lifeforms. However, this planet has an astonishing water world. Almost everything is covered in a type of sea-grass. This grass varies in length depending on the region, but they're all part of the same species. But what's probably more surprising are the 'flowers' you'll find in these fields of sea-grass. These flowers can only be described as primitive soft corals, but they're neither coral nor plant.",
-            "photo": "https://res.cloudinary.com/apollographql/image/upload/v1644381344/odyssey/federation-course1/FlyBy%20illustrations/Landscape_9_kbenjj.png"
+            "id": "VEH_2024_TESLA_MODEL_3_001",
+            "make": "Tesla",
+            "model": "Model 3",
+            "year": 2024,
+            "vin": "5YJ3E1EA8PF901234",
+            "mileage": 750,
+            "images": [
+                "https://example.com/images/vehicles/tesla_model3_001_front.jpg",
+                "https://example.com/images/vehicles/tesla_model3_001_profile.jpg",
+                "https://example.com/images/vehicles/tesla_model3_001_interior.jpg",
+                "https://example.com/images/vehicles/tesla_model3_001_charging.jpg"
+            ]
         },
         {
-            "id": "loc-5",
-            "name": "Zenn-la",
-            "description": "The plant-like organisms on this planet are made up of millions of flowers. Their combined colors and scents make for an amazing spectacle, but they leave little space for other species, which is why there are only very few bush and shrub species. Fungi, grasses and trees are non-existent.",
-            "photo": "https://res.cloudinary.com/apollographql/image/upload/v1644381346/odyssey/federation-course1/FlyBy%20illustrations/Landscape_8_zd1e68.png"
+            "id": "VEH_2024_F150_001",
+            "make": "Ford",
+            "model": "F-150",
+            "year": 2024,
+            "vin": "1FTFW1E88PF567890",
+            "mileage": 3500,
+            "images": [
+                "https://example.com/images/vehicles/f150_001_front.jpg",
+                "https://example.com/images/vehicles/f150_001_truck_bed.jpg",
+                "https://example.com/images/vehicles/f150_001_interior.jpg",
+                "https://example.com/images/vehicles/f150_001_profile.jpg"
+            ]
+        },
+        {
+            "id": "VEH_2024_CIVIC_001",
+            "make": "Honda",
+            "model": "Civic",
+            "year": 2024,
+            "vin": "2HGFC2F5XPH234567",
+            "mileage": 945,
+            "images": [
+                "https://example.com/images/vehicles/civic_001_front.jpg",
+                "https://example.com/images/vehicles/civic_001_side.jpg",
+                "https://example.com/images/vehicles/civic_001_interior.jpg"
+            ]
+        },
+        {
+            "id": "VEH_2024_AUDI_Q5_001",
+            "make": "Audi",
+            "model": "Q5",
+            "year": 2024,
+            "vin": "WA1ANAFY8P1678901",
+            "mileage": 1850,
+            "images": [
+                "https://example.com/images/vehicles/audi_q5_001_front.jpg",
+                "https://example.com/images/vehicles/audi_q5_001_rear.jpg",
+                "https://example.com/images/vehicles/audi_q5_001_interior.jpg",
+                "https://example.com/images/vehicles/audi_q5_001_engine.jpg",
+                "https://example.com/images/vehicles/audi_q5_001_dashboard.jpg"
+            ]
+        },
+        {
+            "id": "VEH_2024_PORSCHE_911_001",
+            "make": "Porsche",
+            "model": "911",
+            "year": 2024,
+            "vin": "WP0AA2A98PS789012",
+            "mileage": 450,
+            "images": [
+                "https://example.com/images/vehicles/porsche_911_001_front.jpg",
+                "https://example.com/images/vehicles/porsche_911_001_profile.jpg",
+                "https://example.com/images/vehicles/porsche_911_001_rear.jpg",
+                "https://example.com/images/vehicles/porsche_911_001_interior.jpg",
+                "https://example.com/images/vehicles/porsche_911_001_wheel.jpg",
+                "https://example.com/images/vehicles/porsche_911_001_engine.jpg"
+            ]
+        },
+        {
+            "id": "VEH_2024_SIENNA_001",
+            "make": "Toyota",
+            "model": "Sienna",
+            "year": 2024,
+            "vin": "5TDYZ3DC3PS890123",
+            "mileage": 2750,
+            "images": [
+                "https://example.com/images/vehicles/sienna_001_front.jpg",
+                "https://example.com/images/vehicles/sienna_001_side.jpg",
+                "https://example.com/images/vehicles/sienna_001_interior.jpg",
+                "https://example.com/images/vehicles/sienna_001_sliding_doors.jpg"
+            ]
+        },
+        {
+            "id": "VEH_2024_ACCORD_001",
+            "make": "Honda",
+            "model": "Accord",
+            "year": 2024,
+            "vin": "1HGCV1F36PA456789",
+            "mileage": 1150,
+            "images": [
+                "https://example.com/images/vehicles/accord_001_front.jpg",
+                "https://example.com/images/vehicles/accord_001_side.jpg",
+                "https://example.com/images/vehicles/accord_001_interior.jpg"
+            ]
         }
     ]
 }

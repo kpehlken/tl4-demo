@@ -1,30 +1,45 @@
 const resolvers = {
   Query: {
-    latestReviews: (_, __, {dataSources}) => {
-      return dataSources.reviewsAPI.getLatestReviews();
+    offers: (_, __, {dataSources}) => {
+      return dataSources.leaseOfferAPI.getAllOffers();
+    },
+    offer: (_, { id }, { dataSources }) => {
+      return dataSources.leaseOfferAPI.getOffer(id);
     }
   },
   Mutation: {
-    submitReview: (_, {locationReview}, {dataSources}) => {
-      const newReview = dataSources.reviewsAPI.submitReviewForLocation(locationReview);
-      return {code: 200, success: true, message: 'success', locationReview: newReview};
-    }
-  },
-  Review: {
-    location: ({locationId}) => {
-      return {id: locationId};
-    }
-  },
-  Location: {
-    // this reference resolver is optional - Apollo Server provides it for us by default
-    __resolveReference(referencedLocation) {
-      return referencedLocation;
+    createOffer: (_, { offerInput }, { dataSources, auth }) => {
+      if(auth.status === "AUTHENTICATED" && auth.user.roles.includes("dealer")) {
+        const newOffer = dataSources.leaseOfferAPI.createNewOffer(offerInput);
+        return {success: true, vehicleOffer: newOffer };
+      } else {
+        return { success: false, vehicleOffer: null }
+      }
     },
-    overallRating: ({id}, _, {dataSources}) => {
-      return dataSources.reviewsAPI.getOverallRatingForLocation(id);
+    applyToOffer: (_, { applicationInput }, { dataSources, auth }) => {
+      if(auth.status === "AUTHENTICATED" && auth.user.roles.includes("customer")) {
+        return dataSources.leaseOfferAPI.applyToOffer();
+      }
+    }
+
+  },
+  LeaseOffer: {
+    vehicle: ({ vehicleId }) => {
+      return {id: vehicleId };
     },
-    reviewsForLocation: ({id}, _, {dataSources}) => {
-      return dataSources.reviewsAPI.getReviewsForLocation(id);
+    applicants: (offer) => {
+      return offer.applicantIds.map(id => ({ id }));
+    },
+    __resolveReference: ({ id }, { dataSources }) => {
+      return dataSources.leaseOfferAPI.getOffer(id);
+    },
+  },
+  Vehicle: {
+    totalOffers: ({id}, _, {dataSources}) => {
+      return dataSources.leaseOfferAPI.getTotalOffers(id);
+    },
+    offersForVehicle: ({id}, _, {dataSources}) => {
+      return dataSources.leaseOfferAPI.getOffersOfVehicle(id);
     },
   },
 };

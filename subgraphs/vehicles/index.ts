@@ -3,10 +3,10 @@ import {startStandaloneServer} from "@apollo/server/standalone";
 import {buildSubgraphSchema} from "@apollo/subgraph";
 import {readFileSync} from "fs";
 import gql from "graphql-tag";
+import VehicleApi from "./datasources/VehicleApi";
 
-const typeDefs = gql(readFileSync('./locations.graphql', { encoding: 'utf-8' }));
-const resolvers = require('./resolvers');
-const LocationsAPI = require('./datasources/LocationsApi');
+const typeDefs = gql(readFileSync('./vehicles.graphql', { encoding: 'utf-8' }));
+import resolvers from "./resolvers";
 
 async function startApolloServer() {
   const server = new ApolloServer({
@@ -14,14 +14,14 @@ async function startApolloServer() {
   });
 
   const port = 4001;
-  const subgraphName = 'locations';
+  const subgraphName = 'vehicles';
 
   try {
     const { url } = await startStandaloneServer(server, {
       context: async () => {
         return {
           dataSources: {
-            locationsAPI: new LocationsAPI(),
+            vehicleAPI: new VehicleApi(),
           },
         };
       },
