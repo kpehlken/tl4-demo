@@ -1,4 +1,4 @@
-extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key", "@requiresScopes"])
 
 type Query {
   users: [User!]! # ADMIN Only
@@ -6,7 +6,7 @@ type Query {
 
 type Vehicle @key(fields: "id") {
   id: ID!
-  dealerNotes: String # DEALER/ADMIN Only
+  dealerNotes: String @requiresScopes(scopes: [["dealer"], ["admin"]])
   dealer: User!
 }
 

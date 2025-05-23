@@ -1,4 +1,4 @@
-extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key", "@policy"])
 
 type Query {
   offers: [LeaseOffer!]!
@@ -6,7 +6,7 @@ type Query {
 }
 
 type Mutation {
-  createOffer(offerInput: LeaseOfferInput): CreateOfferResponse # Only Dealer
+  createOffer(offerInput: LeaseOfferInput): CreateOfferResponse @policy(policies: [["is_dealer"]]) # Only Dealer
   applyToOffer(applicationInput: ApplicationInput): ApplicationResponse # Only Customer
 }
 

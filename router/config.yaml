@@ -2,10 +2,20 @@ cors:
   origins:
     - http://localhost:3000 # Allows any locally-running client to run against your Router
     - https://studio.apollographql.com # Allows Apollo Studio to still run queries against your Router
-include_subgraph_errors:
-  all: true
-headers:
-  all:
+
+coprocessor:
+  url: http://127.0.0.1:8081 # Required. Replace with the URL of your coprocessor's HTTP endpoint.
+  router: # By including this key, a coprocessor can hook into the `RouterService`. You can also use `SupergraphService` for authorization.
+    request: # By including this key, the `RouterService` sends a coprocessor request whenever it first receives a client request.
+      headers: true # These boolean properties indicate which request data to include in the coprocessor request. All are optional and false by default.
+      context: all # The authorization directives works with claims stored in the request's context
+  supergraph:
     request:
-      - propagate:
-          named: authorization
+      headers: true
+      context: all
+
+authorization:
+  directives:
+    enabled: true
+   # reject_unauthorized: false # default: false
+

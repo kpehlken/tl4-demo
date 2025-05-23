@@ -1,7 +1,7 @@
-extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key", "@authenticated"])
 
 type Query {
-  vehicles: [Vehicle!]!
+  vehicles: [Vehicle!]! @authenticated
   vehicle(id: ID!): Vehicle
 }
 
