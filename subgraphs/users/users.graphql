@@ -1,0 +1,27 @@
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
+
+type Query {
+  users: [User!]! # ADMIN Only
+}
+
+type Vehicle @key(fields: "id") {
+  id: ID!
+  dealerNotes: String # DEALER/ADMIN Only
+  dealer: User!
+}
+
+type LeaseOffer @key(fields: "id") {
+  id: ID!
+}
+
+type User @key(fields: "id") {
+  id: ID!
+  email: String! # only owner
+  firstName: String!
+  lastName: String!
+  phone: String # only owner
+  createdAt: String! # only owner
+  vehicles: [Vehicle!]! # only owner
+  applications: [LeaseOffer!]! # only owner
+}
+

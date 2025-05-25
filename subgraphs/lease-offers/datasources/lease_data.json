@@ -1,0 +1,94 @@
+{
+    "offers": [
+        {
+            "id": "offer_001",
+            "monthlyPayment": 289.99,
+            "term": 36,
+            "mileageAllowance": 12000,
+            "downPayment": 2500.00,
+            "vehicleId": "VEH_2024_COROLLA_001",
+            "applicantIds": ["USER_001"]
+        },
+        {
+            "id": "offer_002",
+            "monthlyPayment": 449.00,
+            "term": 48,
+            "mileageAllowance": 15000,
+            "downPayment": 3500.00,
+            "vehicleId": "VEH_2024_RAV4_001",
+            "applicantIds": ["USER_001", "USER_002"]
+        },
+        {
+            "id": "offer_003",
+            "monthlyPayment": 799.99,
+            "term": 36,
+            "mileageAllowance": 10000,
+            "downPayment": 5000.00,
+            "vehicleId": "VEH_2024_BMW_5_SERIES_001",
+            "applicantIds": ["USER_002"]
+        },
+        {
+            "id": "offer_004",
+            "monthlyPayment": 549.00,
+            "term": 24,
+            "mileageAllowance": 10000,
+            "downPayment": 4000.00,
+            "vehicleId": "VEH_2024_TESLA_MODEL_3_001",
+            "applicantIds": ["USER_003"]
+        },
+        {
+            "id": "offer_005",
+            "monthlyPayment": 599.00,
+            "term": 60,
+            "mileageAllowance": 20000,
+            "downPayment": 3000.00,
+            "vehicleId": "VEH_2024_F150_001",
+            "applicantIds": ["USER_004"]
+        },
+        {
+            "id": "offer_006",
+            "monthlyPayment": 219.99,
+            "term": 36,
+            "mileageAllowance": 12000,
+            "downPayment": 1500.00,
+            "vehicleId": "VEH_2024_CIVIC_001",
+            "applicantIds": ["USER_004", "USER_005"]
+        },
+        {
+            "id": "offer_007",
+            "monthlyPayment": 899.00,
+            "term": 39,
+            "mileageAllowance": 7500,
+            "downPayment": 6000.00,
+            "vehicleId": "VEH_2024_AUDI_Q5_001",
+            "applicantIds": ["USER_005"]
+        },
+        {
+            "id": "offer_008",
+            "monthlyPayment": 1299.00,
+            "term": 24,
+            "mileageAllowance": 5000,
+            "downPayment": 8500.00,
+            "vehicleId": "VEH_2024_PORSCHE_911_001",
+            "applicantIds": ["USER_006"]
+        },
+        {
+            "id": "offer_009",
+            "monthlyPayment": 399.00,
+            "term": 48,
+            "mileageAllowance": 15000,
+            "downPayment": 2000.00,
+            "vehicleId": "VEH_2024_SIENNA_001",
+            "applicantIds": ["USER_007"]
+        },
+        {
+            "id": "offer_010",
+            "monthlyPayment": 349.00,
+            "term": 36,
+            "mileageAllowance": 12000,
+            "downPayment": 0.00,
+            "vehicleId": "VEH_2024_ACCORD_001",
+            "applicantIds": ["USER_008"]
+        }
+    ]
+}

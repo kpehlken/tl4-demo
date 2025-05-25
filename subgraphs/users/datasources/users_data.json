@@ -1,0 +1,211 @@
+{
+    "users": [
+        {
+            "id": "USER_001",
+            "email": "hans.mueller@email.de",
+            "firstName": "Hans",
+            "lastName": "Müller",
+            "phone": "+49 40 123456789",
+            "role": "USER",
+            "createdAt": "2024-01-15T10:30:00Z",
+            "vehicleIds": [],
+            "applicationIds": ["offer_001", "offer_002"],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_002",
+            "email": "greta.schmidt@email.de",
+            "firstName": "Greta",
+            "lastName": "Schmidt",
+            "phone": "+49 40 234567890",
+            "role": "USER",
+            "createdAt": "2024-01-20T14:15:00Z",
+            "vehicleIds": [],
+            "applicationIds": ["offer_002", "offer_003"],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_003",
+            "email": "michael.weber@email.de",
+            "firstName": "Michael",
+            "lastName": "Weber",
+            "phone": "+49 40 345678901",
+            "role": "USER",
+            "createdAt": "2024-02-05T09:45:00Z",
+            "vehicleIds": [],
+            "applicationIds": ["lease_004"],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_004",
+            "email": "sara.wagner@email.de",
+            "firstName": "Sara",
+            "lastName": "Wagner",
+            "phone": "+49 40 456789012",
+            "role": "USER",
+            "createdAt": "2024-02-18T16:20:00Z",
+            "vehicleIds": [],
+            "applicationIds": ["offer_005", "offer_006"],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_005",
+            "email": "emma.fischer@email.de",
+            "firstName": "Emma",
+            "lastName": "Fischer",
+            "phone": "+49 40 678901234",
+            "role": "USER",
+            "createdAt": "2024-03-10T13:30:00Z",
+            "vehicleIds": [],
+            "applicationIds": ["offer_006", "offer_007"],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_006",
+            "email": "robert.schulz@email.de",
+            "firstName": "Robert",
+            "lastName": "Schulz",
+            "phone": "+49 40 789012345",
+            "role": "USER",
+            "createdAt": "2024-03-22T08:15:00Z",
+            "vehicleIds": [],
+            "applicationIds": ["offer_008"],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_007",
+            "email": "lisa.meyer@email.de",
+            "firstName": "Lisa",
+            "lastName": "Meyer",
+            "phone": "+49 40 890123456",
+            "role": "USER",
+            "createdAt": "2024-04-01T10:45:00Z",
+            "vehicleIds": [],
+            "applicationIds": ["offer_009"],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_008",
+            "email": "juergen.hoffmann@email.de",
+            "firstName": "Jürgen",
+            "lastName": "Hoffmann",
+            "phone": "+49 40 901234567",
+            "role": "USER",
+            "createdAt": "2024-04-15T15:00:00Z",
+            "vehicleIds": [],
+            "applicationIds": ["offer_010"],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_009",
+            "email": "maria.schneider@email.de",
+            "firstName": "Maria",
+            "lastName": "Schneider",
+            "phone": "+49 40 012345678",
+            "role": "USER",
+            "createdAt": "2024-04-28T12:30:00Z",
+            "vehicleIds": [],
+            "applicationIds": [],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_010",
+            "email": "jennifer.koch@email.de",
+            "firstName": "Jennifer",
+            "lastName": "Koch",
+            "phone": "+49 40 234567890",
+            "role": "USER",
+            "createdAt": "2024-05-10T14:20:00Z",
+            "vehicleIds": [],
+            "applicationIds": [],
+            "vehicleNotes": {}
+        },
+        {
+            "id": "USER_011",
+            "email": "info@autohaus-peters.de",
+            "firstName": "Klaus",
+            "lastName": "Peters",
+            "phone": "+49 40 987654321",
+            "role": "DEALER",
+            "createdAt": "2023-05-15T08:00:00Z",
+            "vehicleIds": ["VEH_2024_COROLLA_001", "VEH_2024_RAV4_001", "VEH_2024_CIVIC_001", "VEH_2024_SIENNA_001", "VEH_2024_ACCORD_001"],
+            "applicationIds": [],
+            "vehicleNotes": {
+                "VEH_2024_COROLLA_001": "Top-Ausstattung, Metallic-Lackierung. Bereits vorgeführt.",
+                "VEH_2024_RAV4_001": "AWD-Modell, neue Winterreifen inklusive. Sofort verfügbar.",
+                "VEH_2024_CIVIC_001": "Sport-Version, modifiziertes Auspuffsystem. Muss gewaschen werden.",
+                "VEH_2024_SIENNA_001": "Cool",
+                "VEH_2024_ACCORD_001": "Nice"
+            }
+        },
+        {
+            "id": "USER_012",
+            "email": "kontakt@bmw-centrum.de",
+            "firstName": "Maximilian",
+            "lastName": "Schulze",
+            "phone": "+49 40 876543210",
+            "role": "DEALER",
+            "createdAt": "2023-06-20T10:30:00Z",
+            "vehicleIds": ["VEH_2024_BMW_5_SERIES_001", "VEH_2024_AUDI_Q5_001"],
+            "applicationIds": [],
+            "vehicleNotes": {
+                "VEH_2024_BMW_5_SERIES_001": "M-Paket, Laser-Scheinwerfer. Erst 2.100 km gelaufen.",
+                "VEH_2024_AUDI_Q5_001": "S-line Ausstattung, Panoramadach. Wartung überfällig."
+            }
+        },
+        {
+            "id": "USER_013",
+            "email": "info@porsche-zentrum.de",
+            "firstName": "Christoph",
+            "lastName": "Hartmann",
+            "phone": "+49 40 765432109",
+            "role": "DEALER",
+            "createdAt": "2023-07-10T14:15:00Z",
+            "vehicleIds": ["VEH_2024_PORSCHE_911_001"],
+            "applicationIds": [],
+            "vehicleNotes": {
+                "VEH_2024_PORSCHE_911_001": "Carrera S, PDK-Getriebe. Nur 450 km. Ausstellungswagen."
+            }
+        },
+        {
+            "id": "USER_014",
+            "email": "kontakt@tesla-centrum.de",
+            "firstName": "Julia",
+            "lastName": "Wagner",
+            "phone": "+49 40 654321098",
+            "role": "DEALER",
+            "createdAt": "2023-08-05T09:45:00Z",
+            "vehicleIds": ["VEH_2024_TESLA_MODEL_3_001"],
+            "applicationIds": [],
+            "vehicleNotes": {
+                "VEH_2024_TESLA_MODEL_3_001": "Long Range, Autopilot Full Self-Driving. Lade-Historie vorhanden."
+            }
+        },
+        {
+            "id": "USER_015",
+            "email": "info@ford-autohaus.de",
+            "firstName": "Stefan",
+            "lastName": "Becker",
+            "phone": "+49 40 543210987",
+            "role": "DEALER",
+            "createdAt": "2023-09-12T11:20:00Z",
+            "vehicleIds": ["VEH_2024_F150_001"],
+            "applicationIds": [],
+            "vehicleNotes": {
+                "VEH_2024_F150_001": "Crew Cab, 3.5L EcoBoost. Nutzfahrzeug-Zulassung. Tankstelle anfordern."
+            }
+        },
+        {
+            "id": "USER_016",
+            "email": "admin@leasing-platform.de",
+            "firstName": "Thomas",
+            "lastName": "Braun",
+            "phone": "+49 40 555111222",
+            "role": "ADMIN",
+            "createdAt": "2023-01-01T00:00:00Z",
+            "vehicleIds": [],
+            "applicationIds": [],
+            "vehicleNotes": {}
+        }
+    ]
+}
