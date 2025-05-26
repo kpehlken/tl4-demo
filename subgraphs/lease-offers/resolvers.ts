@@ -8,21 +8,26 @@ const resolvers = {
     }
   },
   Mutation: {
-    createOffer: (_, { offerInput }, { dataSources }) => {
+    createOffer: (_, { offerInput }, { dataSources, auth }) => {
+      if(auth.status === "AUTHENTICATED" && (auth.user.roles.includes("dealer") || auth.user.roles.includes("admin"))) {
         const newOffer = dataSources.leaseOfferAPI.createNewOffer(offerInput);
-        return {success: true, vehicleOffer: newOffer };
+        return {success: true, vehicleOffer: newOffer};
+      }
     },
-    applyToOffer: (_, { applicationInput }, { dataSources }) => {
+    applyToOffer: (_, { applicationInput }, { dataSources, auth }) => {
+      if(auth.status === "AUTHENTICATED" && auth.user.roles.includes("customer")) {
         return dataSources.leaseOfferAPI.applyToOffer();
+      }
     }
-
   },
   LeaseOffer: {
     vehicle: ({ vehicleId }) => {
       return {id: vehicleId };
     },
-    applicants: (offer) => {
-      return offer.applicantIds.map(id => ({ id }));
+    applicants: (offer, _, { auth }) => {
+      if(auth.status === "AUTHENTICATED" && (auth.user.roles.includes("dealer") || auth.user.roles.includes("admin"))) {
+        return offer.applicantIds.map(id => ({id}));
+      }
     },
     __resolveReference: ({ id }, { dataSources }) => {
       return dataSources.leaseOfferAPI.getOffer(id);
