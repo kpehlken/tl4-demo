@@ -15,7 +15,7 @@ type LeaseOffer @key(fields: "id") {
 }
 
 type User @key(fields: "id") {
-  id: ID!
+  id: ID! # only owner
   email: String! # only owner
   firstName: String!
   lastName: String!
