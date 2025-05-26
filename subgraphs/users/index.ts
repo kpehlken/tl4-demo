@@ -55,21 +55,8 @@ async function startApolloServer() {
 
   try {
     const { url } = await startStandaloneServer(server, {
-      context: async ({ req }) => {
-        const token = req.headers.authorization;
-
-        let user;
-        let status;
-        if(!isTokenValid(token)) {
-          user = null;
-          status = "UNAUTHENTICATED";
-        } else {
-          user = decodeToken(token);
-          status = "AUTHENTICATED";
-        }
-
+      context: async () => {
         return {
-          auth: { user, status: status },
           dataSources: {
             usersAPI: new UsersAPI(),
           },
