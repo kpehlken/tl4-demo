@@ -1,5 +1,10 @@
 # TL4 Demo 👨‍💻
 
+## Branches
+- auth-at-subgraphs
+- directives-with-coprocessor
+- directives-with-jwt-plugin
+
 ## Instructions
 
 Publish the subgraph schemas to Apollo Studio
