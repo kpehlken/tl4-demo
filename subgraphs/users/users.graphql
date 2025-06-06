@@ -1,7 +1,7 @@
-extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key", "@requiresScopes"])
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key", "@requiresScopes", "@authenticated"])
 
 type Query {
-  users: [User!]! # ADMIN Only
+  users: [User!]! @requiresScopes(scopes: [["admin"]])
 }
 
 type Vehicle @key(fields: "id") {
@@ -16,15 +16,15 @@ type LeaseOffer @key(fields: "id") {
 }
 
 type User @key(fields: "id") {
-  id: ID!
+  id: ID! @authenticated
   email: String!
   firstName: String!
   lastName: String!
-  phone: String # only owner
-  role: UserRole! # only owner
-  createdAt: String! # only owner
-  vehicles: [Vehicle!]! # only owner
-  applications: [LeaseOffer!]! # only owner
+  phone: String @authenticated
+  role: UserRole! @authenticated
+  createdAt: String! @authenticated
+  vehicles: [Vehicle!]! @authenticated
+  applications: [LeaseOffer!]! @authenticated
 }
 
 enum UserRole {

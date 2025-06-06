@@ -7,7 +7,7 @@ type Query {
 
 type Mutation {
   createOffer(offerInput: LeaseOfferInput): CreateOfferResponse @policy(policies: [["is_dealer"]]) # Only Dealer
-  applyToOffer(applicationInput: ApplicationInput): ApplicationResponse # Only Customer
+  applyToOffer(applicationInput: ApplicationInput): ApplicationResponse @policy(policies: [["is_customer"]]) # Only Customer
 }
 
 type LeaseOffer @key(fields: "id") {
