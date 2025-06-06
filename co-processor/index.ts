@@ -35,7 +35,7 @@ function isTokenValid(token: string): boolean {
     }
 
     try {
-        const decoded = jwt.verify(token, JWT_SECRET, {
+        jwt.verify(token, JWT_SECRET, {
             algorithms: ['HS256'],
         });
         return true;
@@ -47,9 +47,7 @@ function isTokenValid(token: string): boolean {
 app.use(express.json());
 
 app.post("/", (req: Request, res: Response) => {
-
     const { headers, ...rest } = req.body;
-    console.log("RECIEVED ", rest);
 
     const routerRequest = req.body;
     const forwardedHeaders = req.body.headers;
@@ -70,7 +68,6 @@ app.post("/", (req: Request, res: Response) => {
         }
     }
 
-    console.log("SENDING: ", routerRequest.context);
      return res.json(routerRequest);
 });
 
