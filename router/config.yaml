@@ -16,7 +16,7 @@ authentication:
   router:
     jwt:
       jwks:
-        - url: https://localhost:3333/jwks
+        - url: <idp jwks url>
       header_name: Authorization
       header_value_prefix: Bearer
 
