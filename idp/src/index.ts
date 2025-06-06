@@ -6,7 +6,7 @@ import bcrypt from 'bcrypt';
 
 // Initialize Express app
 const app = express();
-const PORT =  3000;
+const PORT =  3333;
 const JWT_SECRET = 'your-secret-key';
 
 // Middleware

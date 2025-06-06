@@ -1,12 +1,12 @@
-extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key", "@requiresScopes", "@authenticated"])
 
 type Query {
-  users: [User!]! # ADMIN Only
+  users: [User!]! @requiresScopes(scopes: [["admin"]])
 }
 
 type Vehicle @key(fields: "id") {
   id: ID!
-  dealerNotes: String # DEALER/ADMIN Only
+  dealerNotes: String @requiresScopes(scopes: [["dealer"], ["admin"]])
   dealer: User!
 }
 
@@ -15,13 +15,13 @@ type LeaseOffer @key(fields: "id") {
 }
 
 type User @key(fields: "id") {
-  id: ID!
-  email: String! # only owner
+  id: ID! @authenticated
+  email: String!
   firstName: String!
   lastName: String!
-  phone: String # only owner
-  createdAt: String! # only owner
-  vehicles: [Vehicle!]! # only owner
-  applications: [LeaseOffer!]! # only owner
+  phone: String @authenticated
+  createdAt: String! @authenticated
+  vehicles: [Vehicle!]! @authenticated
+  applications: [LeaseOffer!]! @authenticated
 }
 

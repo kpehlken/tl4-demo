@@ -1,4 +1,4 @@
-extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key", "@requiresScopes"])
 
 type Query {
   offers: [LeaseOffer!]!
@@ -6,8 +6,8 @@ type Query {
 }
 
 type Mutation {
-  createOffer(offerInput: LeaseOfferInput): CreateOfferResponse # Only Dealer/Admin
-  applyToOffer(applicationInput: ApplicationInput): ApplicationResponse # Only Customer
+  createOffer(offerInput: LeaseOfferInput): CreateOfferResponse @requiresScopes(scopes: [["dealer"], ["admin"]])
+  applyToOffer(applicationInput: ApplicationInput): ApplicationResponse @requiresScopes(scopes: [["customer"]])
 }
 
 type LeaseOffer @key(fields: "id") {
@@ -17,7 +17,7 @@ type LeaseOffer @key(fields: "id") {
   mileageAllowance: Int!
   downPayment: Float!
   vehicle: Vehicle!
-  applicants: [User!]! # Only Dealer/admin
+  applicants: [User!]! @requiresScopes(scopes: [["dealer"], ["admin"]]) # Only Dealer/admin
 }
 
 type Vehicle @key(fields: "id") {

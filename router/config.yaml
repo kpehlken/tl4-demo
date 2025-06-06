@@ -5,3 +5,22 @@ cors:
 
 include_subgraph_errors:
   all: true
+
+headers:
+  all:
+    request:
+      - propagate:
+          named: authorization
+
+authentication:
+  router:
+    jwt:
+      jwks:
+        - url: https://localhost:3333/jwks
+      header_name: Authorization
+      header_value_prefix: Bearer
+
+authorization:
+  directives:
+    enabled: true
+
