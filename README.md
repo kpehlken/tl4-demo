@@ -21,3 +21,8 @@ Publish the subgraph schemas to Apollo Studio
 
 Start Router
 1. Run `APOLLO_KEY=... APOLLO_GRAPH_REF=... ./router --config config.yaml`
+
+## Specific Instructions for branches
+
+### directives-with-jwt-plugin
+An Identity Provider (IDP) like Okta, Google, etc. is needed. The IDP also needs to provide a JWKS endpoint that is required in the router configuration.
