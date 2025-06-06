@@ -5,3 +5,9 @@ cors:
 
 include_subgraph_errors:
   all: true
+
+headers:
+  all:
+    request:
+      - propagate:
+          named: authorization
